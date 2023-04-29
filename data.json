@@ -1,0 +1,96 @@
+[
+  {
+    "id": "1",
+    "name": "Lucas Lima",
+    "photo": "/assets/lucas.jpeg",
+    "scales": [
+      {
+        "id": "1",
+        "date": "04/28/2023",
+        "position": "Violão"
+      },
+      {
+        "id": "2",
+        "date": "04/29/2023",
+        "position": "violão"
+      },
+      {
+        "id": "3",
+        "date": "04/30/2023",
+        "position": "violão"
+      },
+      {
+        "id": "4",
+        "date": "05/01/2023",
+        "position": "violão"
+      },
+      {
+        "id": "5",
+        "date": "05/02/2023",
+        "position": "violão"
+      },
+      {
+        "id": "6",
+        "date": "05/03/2023",
+        "position": "violão"
+      },
+      {
+        "id": "7",
+        "date": "05/04/2023",
+        "position": "violão"
+      },
+      {
+        "id": "8",
+        "date": "05/05/2023",
+        "position": "violão"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Jhonne Teodorico",
+    "photo": "/assets/jhonne.png",
+    "scales": [
+      {
+        "id": "1",
+        "date": "04/28/2023",
+        "position": "Violão"
+      },
+      {
+        "id": "2",
+        "date": "04/29/2023",
+        "position": "violão"
+      },
+      {
+        "id": "3",
+        "date": "04/30/2023",
+        "position": "violão"
+      },
+      {
+        "id": "4",
+        "date": "05/01/2023",
+        "position": "violão"
+      },
+      {
+        "id": "5",
+        "date": "05/02/2023",
+        "position": "violão"
+      },
+      {
+        "id": "6",
+        "date": "05/03/2023",
+        "position": "violão"
+      },
+      {
+        "id": "7",
+        "date": "05/04/2023",
+        "position": "violão"
+      },
+      {
+        "id": "8",
+        "date": "05/05/2023",
+        "position": "violão"
+      }
+    ]
+  }
+]
