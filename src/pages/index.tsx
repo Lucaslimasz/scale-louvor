@@ -13,7 +13,7 @@ export default function Home() {
     >
       <b className="text-yellow-500 font-semibold text-5xl">Maio</b>
       <h1 className="font-semibold text-3xl pt-6 pb-8">🎧 Escala do louvor 🥁</h1>
-      <p className="font-medium">Selecione o seu perfil <span className="px-3">|</span> <Link href="/fullScale">Escala completa</Link></p>
+      <p className="font-medium">Selecione o seu perfil <span className="px-3">|</span> <Link href="/escala-completa">Escala completa</Link></p>
       <div className="flex flex-wrap items-center justify-center gap-5 pt-10 md:gap-10">
         {users.map((user) => (
           <button key={user.id} className="flex flex-col items-center gap-2">
