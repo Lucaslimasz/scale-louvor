@@ -1,4 +1,3 @@
-import { validateDate } from "@/util/validation-date";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,8 +23,20 @@ interface IUser {
 export default function Musician({ user }: IUser) {
   const date = new Date();
 
+  const validateDate = (dateNow: Date, dateScale: string) => {
+    const scaleDate = new Date(dateScale);
+    const isPastDate = scaleDate > dateNow;
+    const isSameDate = scaleDate.getDate() === dateNow.getDate();
+
+    if (isSameDate) {
+      return "bg-yellow-500";
+    }
+
+    return isPastDate ? "bg-lime-600" : "bg-red-700";
+  };
+
   return (
-    <main className="min-h-screen flex flex-col items-center justify-center max-w-5xl">
+    <main className="min-h-screen flex flex-col items-center justify-center py-20 max-w-5xl">
       <Image
         src={String(user.photo)}
         alt="Lucas Lima"
@@ -54,11 +65,12 @@ export default function Musician({ user }: IUser) {
         })}
       </div>
 
-      <button className="mt-20 mb-10 bg-gradient-to-r from-orange-600 to-blue-600 py-2 px-8 text-lg font-semibold">
-        <Link href="/">
-          Voltar
-        </Link>
-      </button>
+      <Link
+        href="/"
+        className="mt-20 mb-10 bg-gradient-to-r from-orange-600 to-blue-600 py-2 px-8 text-lg font-semibold"
+      >
+        Voltar
+      </Link>
     </main>
   );
 }
