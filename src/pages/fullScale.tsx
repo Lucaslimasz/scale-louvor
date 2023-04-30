@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function FdivlScale() {
   return (
-    <main className="min-h-screen max-w-5xl py-28 px-4">
+    <main className="min-h-screen max-w-5xl pb-28 px-4">
       <Link
         href="/"
         className="bg-gradient-to-r from-orange-600 to-blue-600 py-2 px-8 text-lg font-semibold"
