@@ -21,8 +21,8 @@ export default function Home() {
               <Image
                 src={user.photo}
                 alt="Lucas Lima"
-                width={120}
-                height={120}
+                width={95}
+                height={95}
                 className="md:w-44"
               />
               <p className="text-zinc-400 pt-4">{user.name}</p>
