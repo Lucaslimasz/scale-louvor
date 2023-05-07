@@ -32,8 +32,6 @@ export default function Musician({ user }: IUser) {
     return isPastDate ? "bg-lime-600" : "bg-red-700";
   };
 
-  console.log(data.map(item => item.scales.filter(newItem => newItem.date)))
-
   return (
     <main className="min-h-screen flex flex-col items-center justify-center py-20 max-w-5xl">
       <Image

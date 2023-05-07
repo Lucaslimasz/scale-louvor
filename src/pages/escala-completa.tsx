@@ -2,157 +2,46 @@ import { getTitlePositionScale } from "@/utils/get-title-position-scale";
 import { getDayWeek } from "@/utils/get-week-day";
 import Link from "next/link";
 
+import dataJson from "../../data.json";
+import { useEffect, useState } from "react";
+
+interface IData {
+  date: String;
+  scales: { name: String; position: String }[];
+}
+
 export default function FullScale() {
-  const data = [
-    {
-      id: "1",
-      date: "04/05/2023",
-      scale: {
-        minister: "Leticia",
-        support: "Augusto",
-        guitar: "Lucas",
-        guitarEletric: "Jhon",
-        down: "Isaque",
-        drum: "Caique",
-        soundEngineer: "Carlos",
-      },
-    },
-    {
-      id: "2",
-      date: "06/05/2023",
-      scale: {
-        minister: "Augusto",
-        support: "Rebeca",
-        guitar: "Elizandra",
-        down: "Isaque",
-        drum: "Caique",
-      },
-    },
-    {
-      id: "3",
-      date: "07/05/2023",
-      scale: {
-        minister: "Menesteu",
-        support: "Rayane",
-        guitar: "Elizandra",
-        guitarEletric: "Jhon",
-        down: "Isaque",
-        drum: "Caique",
-        soundEngineer: "Jhonne",
-      },
-    },
-    {
-      id: "4",
-      date: "11/05/2023",
-      scale: {
-        minister: "Pra. Mayne",
-        support: "Lucas",
-        guitar: "Lucas",
-        guitarEletric: "Jhon",
-        down: "Isaque",
-        drum: "Caique",
-        soundEngineer: "Carlos",
-      },
-    },
-    {
-      id: "5",
-      date: "13/05/2023",
-      scale: {
-        minister: "Rayane",
-        support: "Augusto",
-        guitar: "Elizandra",
-        down: "Isaque",
-        drum: "Caique",
-      },
-    },
-    {
-      id: "6",
-      date: "14/05/2023",
-      scale: {
-        minister: "Menesteu",
-        support: "Rebeca",
-        guitar: "Lucas",
-        guitarEletric: "Jhon",
-        down: "Isaque",
-        drum: "Caique",
-        soundEngineer: "Jhonne",
-      },
-    },
-    {
-      id: "7",
-      date: "18/05/2023",
-      scale: {
-        minister: "Leticia",
-        support: "Augusto",
-        guitar: "Lucas",
-        guitarEletric: "Jhon",
-        down: "Isaque",
-        drum: "Caique",
-        soundEngineer: "Carlos",
-      },
-    },
-    {
-      id: "8",
-      date: "20/05/2023",
-      scale: {
-        minister: "Rebeca",
-        support: "Augusto",
-        guitar: "Elizandra",
-        down: "Isaque",
-        drum: "Caique",
-      },
-    },
-    {
-      id: "9",
-      date: "21/05/2023",
-      scale: {
-        minister: "Pra. Mayne",
-        support: "Menesteu",
-        guitar: "Lucas",
-        guitarEletric: "Jhon",
-        down: "Isaque",
-        drum: "Caique",
-        soundEngineer: "Jhonne",
-      },
-    },
-    {
-      id: "10",
-      date: "25/05/2023",
-      scale: {
-        minister: "Lucas",
-        support: "Rebeca",
-        guitar: "Lucas",
-        guitarEletric: "Jhon",
-        down: "Isaque",
-        drum: "Caique",
-        soundEngineer: "Jhonne",
-      },
-    },
-    {
-      id: "11",
-      date: "27/05/2023",
-      scale: {
-        minister: "Rebeca",
-        support: "Augusto",
-        guitar: "Elizandra",
-        down: "Isaque",
-        drum: "Caique",
-      },
-    },
-    {
-      id: "11",
-      date: "28/05/2023",
-      scale: {
-        minister: "Menesteu",
-        support: "Rayane",
-        guitar: "Elizandra",
-        guitarEletric: "Jhon",
-        down: "Isaque",
-        drum: "Caique",
-        soundEngineer: "Jhonne",
-      },
-    },
-  ];
+  const [data, setData] = useState<IData[]>([]);
+
+  useEffect(() => {
+    const map = new Map();
+
+    for (const item of dataJson) {
+      for (const scales in item.scales) {
+        const id = item.id;
+        const scale = item.scales[scales];
+        const { position, date } = scale;
+        const name = item.name;
+        if (map.has(date)) {
+          const value = map.get(date);
+          map.set(date, [...value, { name, position }]);
+        } else {
+          map.set(date, [{ name, position }]);
+        }
+      }
+    }
+
+    const newArray = Array.from(map).map(([keys, items]) => ({
+      date: keys,
+      scales: items,
+    }));
+
+    setData(newArray);
+  }, []);
+
+  const order = data.sort((a, b) => {
+    return Number(a.date.split('/')[1]) - Number(b.date.split('/')[1]);
+  })
 
   return (
     <main className="min-h-screen max-w-5xl pt-16 pb-28 px-4">
@@ -163,18 +52,18 @@ export default function FullScale() {
         Voltar
       </Link>
       <div className="grid md:grid-cols-3 mt-10  gap-8">
-        {data.map((item) => (
-          <div key={item.id} className="border-2 w-full">
+        {order.map((item) => (
+          <div key={Math.random()} className="border-2 w-full">
             <h1 className="bg-orange-600 py-3 px-4 font-bold flex items-center justify-between">
               <b className="text-xl">{getDayWeek(item.date)}</b>
-              <p>{item.date}</p>
+              <p>Dia {item.date.split("/")[1]}</p>
             </h1>
-            {Object.entries(item.scale).map(([key, obj]: any) => (
+            {item.scales.map((obj) => (
               <p
-                key={key}
+                key={Math.random()}
                 className="bg-violet-700 border-b-2 py-2 px-4 text-lg"
               >
-                {getTitlePositionScale(key)} | <b>{obj}</b>
+                {obj.position} | <b>{obj.name}</b>
               </p>
             ))}
           </div>

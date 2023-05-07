@@ -6,31 +6,31 @@
     "scales": [
       {
         "id": "1",
-        "date": "05/05/2023",
+        "date": "05/04/2023",
         "position": "🎸 Violão"
       },
       {
-        "id": "23",
+        "id": "2",
         "date": "05/11/2023",
         "position": "🎙️ Apoio | 🎸 Violão"
       },
       {
-        "id": "23",
+        "id": "3",
         "date": "05/14/2023",
         "position": "🎸 Violão"
       },
       {
-        "id": "23",
+        "id": "4",
         "date": "05/18/2023",
         "position": "🎸 Violão"
       },
       {
-        "id": "4",
+        "id": "5",
         "date": "05/21/2023",
         "position": "🎸 Violão"
       },
       {
-        "id": "5",
+        "id": "6",
         "date": "05/25/2023",
         "position": "🎙️ Ministrante | 🎸 Violão"
       }
@@ -402,7 +402,7 @@
     ]
   },
   {
-    "id": "13",
+    "id": "12",
     "name": "Rayane",
     "photo": "/assets/rayane.png",
     "scales": [
@@ -424,7 +424,7 @@
     ]
   },
   {
-    "id": "12",
+    "id": "13",
     "name": "Elizandra",
     "photo": "/assets/elizandra.png",
     "scales": [
