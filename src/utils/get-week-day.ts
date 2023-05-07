@@ -1,7 +1,5 @@
 interface IConvertionDay {
-  Thu: String;
-  Sat: String;
-  Sun: String;
+  [key: string]: string;
 }
 
 export const getDayWeek = (date: String) => {
