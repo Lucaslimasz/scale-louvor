@@ -12,7 +12,7 @@ export default function Home() {
         autoPlay
         muted
         loop
-        className="opacity-30 absolute -z-20 w-auto min-w-full min-h-full max-w-none"
+        className="opacity-30 absolute -z-20 w-auto min-w-full min-h-full"
       >
         <source src="/videos/bg.mp4" type="video/mp4" />
       </video>
