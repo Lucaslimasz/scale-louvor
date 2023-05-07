@@ -1,4 +1,3 @@
-import { getTitlePositionScale } from "@/utils/get-title-position-scale";
 import { getDayWeek } from "@/utils/get-week-day";
 import Link from "next/link";
 
