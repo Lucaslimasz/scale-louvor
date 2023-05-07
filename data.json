@@ -12,7 +12,12 @@
       {
         "id": "2",
         "date": "05/11/2023",
-        "position": "🎙️ Apoio | 🎸 Violão"
+        "position": "🎙️ Apoio"
+      },
+      {
+        "id": "2333",
+        "date": "05/11/2023",
+        "position": "🎸 Violão"
       },
       {
         "id": "3",
@@ -32,7 +37,12 @@
       {
         "id": "6",
         "date": "05/25/2023",
-        "position": "🎙️ Ministrante | 🎸 Violão"
+        "position": "🎙️ Ministrante"
+      },
+      {
+        "id": "6555",
+        "date": "05/25/2023",
+        "position": " 🎸 Violão"
       }
     ]
   },
@@ -59,11 +69,6 @@
       {
         "id": "4",
         "date": "05/25/2023",
-        "position": "🎛️ Sonoplastia"
-      },
-      {
-        "id": "4",
-        "date": "05/27/2023",
         "position": "🎛️ Sonoplastia"
       }
     ]

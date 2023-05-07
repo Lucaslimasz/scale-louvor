@@ -18,7 +18,6 @@ export default function FullScale() {
 
     for (const item of dataJson) {
       for (const scales in item.scales) {
-        const id = item.id;
         const scale = item.scales[scales];
         const { position, date } = scale;
         const name = item.name;
